@@ -4,24 +4,14 @@ const url = require('url')
 const StringDecoder = require('string_decoder').StringDecoder
 const fs = require('fs')
 const config = require('./config')
+const handlers = require('./lib/handlers')
 
 const decoder = new StringDecoder('utf-8')
-
-const handlers = {
-  hello(data, callback) {
-    callback(200, 'Welcome!')
-  },
-  ping(data, callback) {
-    callback(200)
-  },
-  notFound(data, callback) {
-    callback(404)
-  },
-}
 
 const router = {
   hello: handlers.hello,
   ping: handlers.ping,
+  users: handlers.users
 }
 
 const generalServer = (req, res) => {
