@@ -3,11 +3,13 @@ const environments = {
     httpPort: 3000,
     httpsPort: 3001,
     envName: 'staging',
+    hashingSecret: 'topSecret',
   },
   production: {
     httpPort: 80,
     httpsPort: 443,
     envName: 'production',
+    hashingSecret: 'topSecret',
   },
 }
 
