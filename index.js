@@ -5,6 +5,7 @@ const StringDecoder = require('string_decoder').StringDecoder
 const fs = require('fs')
 const config = require('./config')
 const handlers = require('./lib/handlers')
+const helpers = require('./lib/helpers')
 
 const decoder = new StringDecoder('utf-8')
 
@@ -30,7 +31,7 @@ const generalServer = (req, res) => {
       query: parsedUrl.query,
       method: req.method.toUpperCase(),
       headers: req.headers,
-      payload,
+      payload: helpers.parseJsonToObject(payload),
     }
 
     handler(data, (status, payload) => {
