@@ -12,7 +12,8 @@ const decoder = new StringDecoder('utf-8')
 const router = {
   hello: handlers.hello,
   ping: handlers.ping,
-  users: handlers.users
+  users: handlers.users,
+  tokens: handlers.tokens,
 }
 
 const generalServer = (req, res) => {
